@@ -1,0 +1,119 @@
+rule get_table:
+    input:
+        get_table
+    output:
+        "table/{sample}_{tumor}.{chrom}.csv"
+    shell:
+        "ln -s {input} {output}"
+
+rule anno2EB:
+    input:
+        table = "table/{sample}_{tumor}.{chrom}.csv",
+        tumor_bam = "bamsplit/{sample}_{tumor}.{chrom}.bam"
+    output:
+        "eb/{sample}_{tumor}-{chrom}.EB"
+    log:
+        "logs/eb/{sample}_{tumor}-{chrom}.log"
+    threads:
+        config['EBFilter']['threads']['EBscore']
+    conda:
+        f"../{config['envs']}/eb-env.yml"
+    params:
+        cleanpileup = get_script('cleanpileup'),
+        csv2bed = get_script('csv2bed'),
+        pon2cols = get_script('pon2cols'),
+        pile2count = get_script('pile2count'),
+        matrix2EBinput = get_script('matrix2EBinput'),
+        makeponlist = get_script('makeponlist')
+        # refgen = full_path('genome')
+    script:
+        "../scripts/eb.py"
+
+
+def get_cache(w):
+    '''
+    retrieves path to chrom.cache from the wildcards.chrom
+    '''
+
+    chrom = w.chrom
+    EBcache_path = static_path(config['EBFilter']['pon_list'])
+    cache_folder = os.path.join(config['paths']['mystatic'], config['EBFilter']['cache_folder'])
+    EBcache_folder = os.path.join(cache_folder, "EBcache")
+    EB_cache_file = os.path.join(EBcache_folder, f"{chrom}.cache")
+    return EB_cache_file
+
+
+rule anno2EB_EBcache:
+    input:
+        table = "table/{sample}_{tumor}.{chrom}.csv",
+        tumor_bam = "bamsplit/{sample}_{tumor}.{chrom}.bam",
+        EBcache = get_cache
+    output:
+        "eb/{sample}_{tumor}-{chrom}.cachedEB"
+    log:
+        "logs/eb/{sample}_{tumor}-{chrom}.log"
+    threads:
+        config['EBFilter']['threads']['EBscore']
+    conda:
+        f"../{config['envs']}/eb-env.yml"
+    params:
+        cleanpileup = get_script('cleanpileup'),
+        csv2bed = get_script('csv2bed'),
+        pon2cols = get_script('pon2cols'),
+        pile2count = get_script('pile2count'),
+        matrix2EBinput = get_script('matrix2EBinput'),
+        reducematrix = get_script('reducematrix'),
+        reorder_matrix = get_script('reordermatrix')
+        # refgen = full_path('genome')
+    script:
+        "../scripts/ebfromcache.py"
+
+
+# ######################## MERGE ####################################################
+
+def get_mergeEBscore_input(w):
+    '''
+    performs the input switch for mergeEBscore
+    '''
+
+    if config['EBFilter']['use_cache']:
+        input_list = [f"eb/{w.sample}_{w.tumor}-{chrom}.cachedEB" for chrom in chrom_list]
+    else:
+        input_list = [f"eb/{w.sample}_{w.tumor}-{chrom}.EB" for chrom in chrom_list]
+    val_list = []
+    for _input in input_list:
+        val_list.append(_input)
+    return val_list
+
+
+rule mergeEBscore:
+    input:
+        get_mergeEBscore_input
+        # input switch for cached eb-files
+    output:
+        "EB/{sample}_{tumor}.csv"
+    threads:
+        1
+    run:
+        anno_df = pd.read_csv(input[0], sep='\t', index_col=False)
+        EB_dfs = []
+        for EB_file in input:
+            if os.path.isfile(EB_file):
+                if os.path.getsize(EB_file ) > 20:
+                    EB_df = pd.read_csv(EB_file, sep='\t', index_col=False)
+                    # cleanup after
+                    # shell(f"rm {EB_file}")
+                    if EB_df.empty:
+                        continue
+                    EB_dfs.append(EB_df)
+        EB_merge = pd.concat(EB_dfs).sort_values(['Chr', 'Start'])
+
+        # sort nicely
+        cols = ['Chr', 'Start', 'End', 'Ref', 'Alt', 'EBscore', 'PoN-Ref', 'PoN-Alt']
+        if config['EBFilter']['full_pon_output']:
+            base_cols = list("AaGgCcTtIiDd")
+            col_name = "|".join(base_cols)
+            cols.append(col_name)
+        EB_merge = EB_merge[cols]
+        EB_merge.to_csv(output[0], sep='\t', index=False)
+        show_output(f"Written EB-annotated file to {output[0]}", color='success')

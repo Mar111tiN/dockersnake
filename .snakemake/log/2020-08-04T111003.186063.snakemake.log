@@ -1,0 +1,4 @@
+KeyError in line 15 of /fast/home/users/szyskam_c/snakes/develop/dockersnake/includes/splitBAM.snk:
+'merge_bam'
+  File "/fast/home/users/szyskam_c/snakes/develop/dockersnake/Snakefile", line 27, in <module>
+  File "/fast/home/users/szyskam_c/snakes/develop/dockersnake/includes/splitBAM.snk", line 15, in <module>

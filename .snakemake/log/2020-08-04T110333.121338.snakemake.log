@@ -1,0 +1,4 @@
+Building DAG of jobs...
+MissingInputException in line 1 of /fast/home/users/szyskam_c/snakes/develop/dockersnake/includes/EB.snk:
+Missing input files for rule get_table:
+/fast/users/szyskam_c/work/testdata/dockersnake/002_A.chr1

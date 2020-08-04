@@ -1,0 +1,684 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 20
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	23	anno2EB
+	23	get_table
+	1	mergeEBscore
+	1	merge_final_bam
+	23	split_final_bam
+	72
+
+[Tue Aug  4 11:33:58 2020]
+rule get_table:
+    input: /fast/users/szyskam_c/work/testdata/dockersnake/table/002_A.chr8.csv
+    output: table/002_A.chr8.csv
+    jobid: 39
+    reason: Missing output files: table/002_A.chr8.csv
+    wildcards: sample=002, tumor=A, chrom=chr8
+
+ln -s /fast/users/szyskam_c/work/testdata/dockersnake/table/002_A.chr8.csv table/002_A.chr8.csv
+
+[Tue Aug  4 11:33:58 2020]
+rule get_table:
+    input: /fast/users/szyskam_c/work/testdata/dockersnake/table/002_A.chr22.csv
+    output: table/002_A.chr22.csv
+    jobid: 67
+    reason: Missing output files: table/002_A.chr22.csv
+    wildcards: sample=002, tumor=A, chrom=chr22
+
+ln -s /fast/users/szyskam_c/work/testdata/dockersnake/table/002_A.chr22.csv table/002_A.chr22.csv
+
+[Tue Aug  4 11:33:58 2020]
+rule get_table:
+    input: /fast/users/szyskam_c/work/testdata/dockersnake/table/002_A.chr14.csv
+    output: table/002_A.chr14.csv
+    jobid: 51
+    reason: Missing output files: table/002_A.chr14.csv
+    wildcards: sample=002, tumor=A, chrom=chr14
+
+ln -s /fast/users/szyskam_c/work/testdata/dockersnake/table/002_A.chr14.csv table/002_A.chr14.csv
+
+[Tue Aug  4 11:33:58 2020]
+rule get_table:
+    input: /fast/users/szyskam_c/work/testdata/dockersnake/table/002_A.chr11.csv
+    output: table/002_A.chr11.csv
+    jobid: 45
+    reason: Missing output files: table/002_A.chr11.csv
+    wildcards: sample=002, tumor=A, chrom=chr11
+
+ln -s /fast/users/szyskam_c/work/testdata/dockersnake/table/002_A.chr11.csv table/002_A.chr11.csv
+[Tue Aug  4 11:33:58 2020]
+Finished job 39.
+1 of 72 steps (1%) done
+
+[Tue Aug  4 11:33:58 2020]
+rule get_table:
+    input: /fast/users/szyskam_c/work/testdata/dockersnake/table/002_A.chr12.csv
+    output: table/002_A.chr12.csv
+    jobid: 47
+    reason: Missing output files: table/002_A.chr12.csv
+    wildcards: sample=002, tumor=A, chrom=chr12
+
+ln -s /fast/users/szyskam_c/work/testdata/dockersnake/table/002_A.chr12.csv table/002_A.chr12.csv
+[Tue Aug  4 11:33:58 2020]
+Finished job 67.
+2 of 72 steps (3%) done
+
+[Tue Aug  4 11:33:58 2020]
+rule get_table:
+    input: /fast/users/szyskam_c/work/testdata/dockersnake/table/002_A.chr5.csv
+    output: table/002_A.chr5.csv
+    jobid: 33
+    reason: Missing output files: table/002_A.chr5.csv
+    wildcards: sample=002, tumor=A, chrom=chr5
+
+ln -s /fast/users/szyskam_c/work/testdata/dockersnake/table/002_A.chr5.csv table/002_A.chr5.csv
+[Tue Aug  4 11:33:58 2020]
+Finished job 51.
+3 of 72 steps (4%) done
+[Tue Aug  4 11:33:58 2020]
+Finished job 45.
+4 of 72 steps (6%) done
+
+[Tue Aug  4 11:33:58 2020]
+rule get_table:
+    input: /fast/users/szyskam_c/work/testdata/dockersnake/table/002_A.chr4.csv
+    output: table/002_A.chr4.csv
+    jobid: 31
+    reason: Missing output files: table/002_A.chr4.csv
+    wildcards: sample=002, tumor=A, chrom=chr4
+
+ln -s /fast/users/szyskam_c/work/testdata/dockersnake/table/002_A.chr4.csv table/002_A.chr4.csv
+[Tue Aug  4 11:33:58 2020]
+Finished job 47.
+5 of 72 steps (7%) done
+
+[Tue Aug  4 11:33:58 2020]
+rule get_table:
+    input: /fast/users/szyskam_c/work/testdata/dockersnake/table/002_A.chr9.csv
+    output: table/002_A.chr9.csv
+    jobid: 41
+    reason: Missing output files: table/002_A.chr9.csv
+    wildcards: sample=002, tumor=A, chrom=chr9
+
+ln -s /fast/users/szyskam_c/work/testdata/dockersnake/table/002_A.chr9.csv table/002_A.chr9.csv
+[Tue Aug  4 11:33:58 2020]
+Finished job 33.
+6 of 72 steps (8%) done
+
+[Tue Aug  4 11:33:58 2020]
+rule get_table:
+    input: /fast/users/szyskam_c/work/testdata/dockersnake/table/002_A.chr19.csv
+    output: table/002_A.chr19.csv
+    jobid: 61
+    reason: Missing output files: table/002_A.chr19.csv
+    wildcards: sample=002, tumor=A, chrom=chr19
+
+ln -s /fast/users/szyskam_c/work/testdata/dockersnake/table/002_A.chr19.csv table/002_A.chr19.csv
+[Tue Aug  4 11:33:58 2020]
+Finished job 31.
+7 of 72 steps (10%) done
+
+[Tue Aug  4 11:33:58 2020]
+[Tue Aug  4 11:33:58 2020]
+rule get_table:
+    input: /fast/users/szyskam_c/work/testdata/dockersnake/table/002_A.chr16.csv
+    output: table/002_A.chr16.csv
+    jobid: 55
+    reason: Missing output files: table/002_A.chr16.csv
+    wildcards: sample=002, tumor=A, chrom=chr16
+Finished job 41.
+
+8 of 72 steps (11%) done
+ln -s /fast/users/szyskam_c/work/testdata/dockersnake/table/002_A.chr16.csv table/002_A.chr16.csv
+[Tue Aug  4 11:33:58 2020]
+Finished job 61.
+9 of 72 steps (12%) done
+[Tue Aug  4 11:33:58 2020]
+Finished job 55.
+10 of 72 steps (14%) done
+
+[Tue Aug  4 11:33:59 2020]
+rule get_table:
+    input: /fast/users/szyskam_c/work/testdata/dockersnake/table/002_A.chr6.csv
+    output: table/002_A.chr6.csv
+    jobid: 35
+    reason: Missing output files: table/002_A.chr6.csv
+    wildcards: sample=002, tumor=A, chrom=chr6
+
+ln -s /fast/users/szyskam_c/work/testdata/dockersnake/table/002_A.chr6.csv table/002_A.chr6.csv
+
+[Tue Aug  4 11:33:59 2020]
+rule get_table:
+    input: /fast/users/szyskam_c/work/testdata/dockersnake/table/002_A.chr3.csv
+    output: table/002_A.chr3.csv
+    jobid: 29
+    reason: Missing output files: table/002_A.chr3.csv
+    wildcards: sample=002, tumor=A, chrom=chr3
+
+ln -s /fast/users/szyskam_c/work/testdata/dockersnake/table/002_A.chr3.csv table/002_A.chr3.csv
+
+[Tue Aug  4 11:33:59 2020]
+rule get_table:
+    input: /fast/users/szyskam_c/work/testdata/dockersnake/table/002_A.chr20.csv
+    output: table/002_A.chr20.csv
+    jobid: 63
+    reason: Missing output files: table/002_A.chr20.csv
+    wildcards: sample=002, tumor=A, chrom=chr20
+
+ln -s /fast/users/szyskam_c/work/testdata/dockersnake/table/002_A.chr20.csv table/002_A.chr20.csv
+[Tue Aug  4 11:33:59 2020]
+Finished job 35.
+11 of 72 steps (15%) done
+
+[Tue Aug  4 11:33:59 2020]
+rule get_table:
+    input: /fast/users/szyskam_c/work/testdata/dockersnake/table/002_A.chr17.csv
+    output: table/002_A.chr17.csv
+    jobid: 57
+    reason: Missing output files: table/002_A.chr17.csv
+    wildcards: sample=002, tumor=A, chrom=chr17
+
+ln -s /fast/users/szyskam_c/work/testdata/dockersnake/table/002_A.chr17.csv table/002_A.chr17.csv
+[Tue Aug  4 11:33:59 2020]
+Finished job 29.
+12 of 72 steps (17%) done
+
+[Tue Aug  4 11:33:59 2020]
+rule get_table:
+    input: /fast/users/szyskam_c/work/testdata/dockersnake/table/002_A.chr1.csv
+    output: table/002_A.chr1.csv
+    jobid: 25
+    reason: Missing output files: table/002_A.chr1.csv
+    wildcards: sample=002, tumor=A, chrom=chr1
+
+[Tue Aug  4 11:33:59 2020]
+Finished job 63.
+13 of 72 steps (18%) done
+ln -s /fast/users/szyskam_c/work/testdata/dockersnake/table/002_A.chr1.csv table/002_A.chr1.csv
+
+[Tue Aug  4 11:33:59 2020]
+rule merge_final_bam:
+    input: /fast/users/szyskam_c/work/testdata/dockersnake/bam/002_A.bam
+    output: bam/002_A.bam
+    jobid: 71
+    reason: Missing output files: bam/002_A.bam
+    wildcards: sample=002, tumor=A
+
+ln -s /fast/users/szyskam_c/work/testdata/dockersnake/bam/002_A.bam bam/002_A.bam; sambamba index bam/002_A.bam
+[Tue Aug  4 11:33:59 2020]
+Finished job 57.
+14 of 72 steps (19%) done
+[Tue Aug  4 11:33:59 2020]
+Finished job 25.
+15 of 72 steps (21%) done
+
+[Tue Aug  4 11:33:59 2020]
+rule get_table:
+    input: /fast/users/szyskam_c/work/testdata/dockersnake/table/002_A.chr2.csv
+    output: table/002_A.chr2.csv
+    jobid: 27
+    reason: Missing output files: table/002_A.chr2.csv
+    wildcards: sample=002, tumor=A, chrom=chr2
+
+ln -s /fast/users/szyskam_c/work/testdata/dockersnake/table/002_A.chr2.csv table/002_A.chr2.csv
+
+[Tue Aug  4 11:33:59 2020]
+rule get_table:
+    input: /fast/users/szyskam_c/work/testdata/dockersnake/table/002_A.chr10.csv
+    output: table/002_A.chr10.csv
+    jobid: 43
+    reason: Missing output files: table/002_A.chr10.csv
+    wildcards: sample=002, tumor=A, chrom=chr10
+
+ln -s /fast/users/szyskam_c/work/testdata/dockersnake/table/002_A.chr10.csv table/002_A.chr10.csv
+[Tue Aug  4 11:33:59 2020]
+
+Finished job 27.
+[Tue Aug  4 11:33:59 2020]
+16 of 72 steps (22%) done
+rule get_table:
+    input: /fast/users/szyskam_c/work/testdata/dockersnake/table/002_A.chr15.csv
+    output: table/002_A.chr15.csv
+    jobid: 53
+    reason: Missing output files: table/002_A.chr15.csv
+    wildcards: sample=002, tumor=A, chrom=chr15
+
+ln -s /fast/users/szyskam_c/work/testdata/dockersnake/table/002_A.chr15.csv table/002_A.chr15.csv
+
+[Tue Aug  4 11:33:59 2020]
+rule get_table:
+    input: /fast/users/szyskam_c/work/testdata/dockersnake/table/002_A.chr7.csv
+    output: table/002_A.chr7.csv
+    jobid: 37
+    reason: Missing output files: table/002_A.chr7.csv
+    wildcards: sample=002, tumor=A, chrom=chr7
+
+ln -s /fast/users/szyskam_c/work/testdata/dockersnake/table/002_A.chr7.csv table/002_A.chr7.csv
+[Tue Aug  4 11:33:59 2020]
+Finished job 43.
+17 of 72 steps (24%) done
+[Tue Aug  4 11:33:59 2020]
+Finished job 53.
+18 of 72 steps (25%) done
+[Tue Aug  4 11:33:59 2020]
+Finished job 37.
+19 of 72 steps (26%) done
+
+[Tue Aug  4 11:34:00 2020]
+rule get_table:
+    input: /fast/users/szyskam_c/work/testdata/dockersnake/table/002_A.chr13.csv
+    output: table/002_A.chr13.csv
+    jobid: 49
+    reason: Missing output files: table/002_A.chr13.csv
+    wildcards: sample=002, tumor=A, chrom=chr13
+
+ln -s /fast/users/szyskam_c/work/testdata/dockersnake/table/002_A.chr13.csv table/002_A.chr13.csv
+
+[Tue Aug  4 11:34:00 2020]
+rule get_table:
+    input: /fast/users/szyskam_c/work/testdata/dockersnake/table/002_A.chr21.csv
+    output: table/002_A.chr21.csv
+    jobid: 65
+    reason: Missing output files: table/002_A.chr21.csv
+    wildcards: sample=002, tumor=A, chrom=chr21
+
+ln -s /fast/users/szyskam_c/work/testdata/dockersnake/table/002_A.chr21.csv table/002_A.chr21.csv
+[Tue Aug  4 11:34:00 2020]
+Finished job 49.
+20 of 72 steps (28%) done
+[Tue Aug  4 11:34:00 2020]
+Finished job 65.
+21 of 72 steps (29%) done
+
+[Tue Aug  4 11:34:00 2020]
+rule get_table:
+    input: /fast/users/szyskam_c/work/testdata/dockersnake/table/002_A.chrX.csv
+    output: table/002_A.chrX.csv
+    jobid: 69
+    reason: Missing output files: table/002_A.chrX.csv
+    wildcards: sample=002, tumor=A, chrom=chrX
+
+ln -s /fast/users/szyskam_c/work/testdata/dockersnake/table/002_A.chrX.csv table/002_A.chrX.csv
+[Tue Aug  4 11:34:00 2020]
+Finished job 69.
+22 of 72 steps (31%) done
+
+[Tue Aug  4 11:34:00 2020]
+rule get_table:
+    input: /fast/users/szyskam_c/work/testdata/dockersnake/table/002_A.chr18.csv
+    output: table/002_A.chr18.csv
+    jobid: 59
+    reason: Missing output files: table/002_A.chr18.csv
+    wildcards: sample=002, tumor=A, chrom=chr18
+
+ln -s /fast/users/szyskam_c/work/testdata/dockersnake/table/002_A.chr18.csv table/002_A.chr18.csv
+[Tue Aug  4 11:34:00 2020]
+Finished job 59.
+23 of 72 steps (32%) done
+Activating conda environment: /fast/scratch/users/szyskam_c/develop/Dockersnake/.snakemake/conda/3ca628dd
+[Tue Aug  4 11:34:53 2020]
+Finished job 71.
+24 of 72 steps (33%) done
+
+[Tue Aug  4 11:34:54 2020]
+rule split_final_bam:
+    input: bam/002_A.bam
+    output: bamsplit/002_A.chr4.bam
+    jobid: 32
+    reason: Missing output files: bamsplit/002_A.chr4.bam; Input files updated by another job: bam/002_A.bam
+    wildcards: sample=002, tumor=A, chrom=chr4
+    threads: 8
+
+sambamba view -t 8 -h -f bam -o bamsplit/002_A.chr4.bam bam/002_A.bam chr4 
+
+[Tue Aug  4 11:34:54 2020]
+rule split_final_bam:
+    input: bam/002_A.bam
+    output: bamsplit/002_A.chr5.bam
+    jobid: 34
+    reason: Missing output files: bamsplit/002_A.chr5.bam; Input files updated by another job: bam/002_A.bam
+    wildcards: sample=002, tumor=A, chrom=chr5
+    threads: 8
+
+sambamba view -t 8 -h -f bam -o bamsplit/002_A.chr5.bam bam/002_A.bam chr5 
+Activating conda environment: /fast/scratch/users/szyskam_c/develop/Dockersnake/.snakemake/conda/3ca628dd
+Activating conda environment: /fast/scratch/users/szyskam_c/develop/Dockersnake/.snakemake/conda/3ca628dd
+[Tue Aug  4 11:35:32 2020]
+Finished job 34.
+25 of 72 steps (35%) done
+
+[Tue Aug  4 11:35:32 2020]
+rule split_final_bam:
+    input: bam/002_A.bam
+    output: bamsplit/002_A.chr21.bam
+    jobid: 66
+    reason: Missing output files: bamsplit/002_A.chr21.bam; Input files updated by another job: bam/002_A.bam
+    wildcards: sample=002, tumor=A, chrom=chr21
+    threads: 8
+
+sambamba view -t 8 -h -f bam -o bamsplit/002_A.chr21.bam bam/002_A.bam chr21 
+[Tue Aug  4 11:35:33 2020]
+Finished job 32.
+26 of 72 steps (36%) done
+
+[Tue Aug  4 11:35:33 2020]
+rule split_final_bam:
+    input: bam/002_A.bam
+    output: bamsplit/002_A.chr3.bam
+    jobid: 30
+    reason: Missing output files: bamsplit/002_A.chr3.bam; Input files updated by another job: bam/002_A.bam
+    wildcards: sample=002, tumor=A, chrom=chr3
+    threads: 8
+
+sambamba view -t 8 -h -f bam -o bamsplit/002_A.chr3.bam bam/002_A.bam chr3 
+Activating conda environment: /fast/scratch/users/szyskam_c/develop/Dockersnake/.snakemake/conda/3ca628dd
+Activating conda environment: /fast/scratch/users/szyskam_c/develop/Dockersnake/.snakemake/conda/3ca628dd
+[Tue Aug  4 11:35:44 2020]
+Finished job 66.
+27 of 72 steps (38%) done
+
+[Tue Aug  4 11:35:44 2020]
+rule split_final_bam:
+    input: bam/002_A.bam
+    output: bamsplit/002_A.chr16.bam
+    jobid: 56
+    reason: Missing output files: bamsplit/002_A.chr16.bam; Input files updated by another job: bam/002_A.bam
+    wildcards: sample=002, tumor=A, chrom=chr16
+    threads: 8
+
+sambamba view -t 8 -h -f bam -o bamsplit/002_A.chr16.bam bam/002_A.bam chr16 
+Activating conda environment: /fast/scratch/users/szyskam_c/develop/Dockersnake/.snakemake/conda/3ca628dd
+[Tue Aug  4 11:36:05 2020]
+Finished job 30.
+28 of 72 steps (39%) done
+
+[Tue Aug  4 11:36:05 2020]
+rule split_final_bam:
+    input: bam/002_A.bam
+    output: bamsplit/002_A.chr6.bam
+    jobid: 36
+    reason: Missing output files: bamsplit/002_A.chr6.bam; Input files updated by another job: bam/002_A.bam
+    wildcards: sample=002, tumor=A, chrom=chr6
+    threads: 8
+
+sambamba view -t 8 -h -f bam -o bamsplit/002_A.chr6.bam bam/002_A.bam chr6 
+Activating conda environment: /fast/scratch/users/szyskam_c/develop/Dockersnake/.snakemake/conda/3ca628dd
+[Tue Aug  4 11:36:24 2020]
+Finished job 56.
+29 of 72 steps (40%) done
+
+[Tue Aug  4 11:36:24 2020]
+rule split_final_bam:
+    input: bam/002_A.bam
+    output: bamsplit/002_A.chr9.bam
+    jobid: 42
+    reason: Missing output files: bamsplit/002_A.chr9.bam; Input files updated by another job: bam/002_A.bam
+    wildcards: sample=002, tumor=A, chrom=chr9
+    threads: 8
+
+sambamba view -t 8 -h -f bam -o bamsplit/002_A.chr9.bam bam/002_A.bam chr9 
+Activating conda environment: /fast/scratch/users/szyskam_c/develop/Dockersnake/.snakemake/conda/3ca628dd
+[Tue Aug  4 11:36:41 2020]
+Finished job 36.
+30 of 72 steps (42%) done
+
+[Tue Aug  4 11:36:41 2020]
+rule split_final_bam:
+    input: bam/002_A.bam
+    output: bamsplit/002_A.chr19.bam
+    jobid: 62
+    reason: Missing output files: bamsplit/002_A.chr19.bam; Input files updated by another job: bam/002_A.bam
+    wildcards: sample=002, tumor=A, chrom=chr19
+    threads: 8
+
+sambamba view -t 8 -h -f bam -o bamsplit/002_A.chr19.bam bam/002_A.bam chr19 
+Activating conda environment: /fast/scratch/users/szyskam_c/develop/Dockersnake/.snakemake/conda/3ca628dd
+[Tue Aug  4 11:37:04 2020]
+Finished job 42.
+31 of 72 steps (43%) done
+
+[Tue Aug  4 11:37:04 2020]
+rule split_final_bam:
+    input: bam/002_A.bam
+    output: bamsplit/002_A.chr13.bam
+    jobid: 50
+    reason: Missing output files: bamsplit/002_A.chr13.bam; Input files updated by another job: bam/002_A.bam
+    wildcards: sample=002, tumor=A, chrom=chr13
+    threads: 8
+
+sambamba view -t 8 -h -f bam -o bamsplit/002_A.chr13.bam bam/002_A.bam chr13 
+Activating conda environment: /fast/scratch/users/szyskam_c/develop/Dockersnake/.snakemake/conda/3ca628dd
+[Tue Aug  4 11:37:28 2020]
+Finished job 50.
+32 of 72 steps (44%) done
+
+[Tue Aug  4 11:37:28 2020]
+rule split_final_bam:
+    input: bam/002_A.bam
+    output: bamsplit/002_A.chr12.bam
+    jobid: 48
+    reason: Missing output files: bamsplit/002_A.chr12.bam; Input files updated by another job: bam/002_A.bam
+    wildcards: sample=002, tumor=A, chrom=chr12
+    threads: 8
+
+sambamba view -t 8 -h -f bam -o bamsplit/002_A.chr12.bam bam/002_A.bam chr12 
+[Tue Aug  4 11:37:30 2020]
+Finished job 62.
+33 of 72 steps (46%) done
+
+[Tue Aug  4 11:37:30 2020]
+rule split_final_bam:
+    input: bam/002_A.bam
+    output: bamsplit/002_A.chr14.bam
+    jobid: 52
+    reason: Missing output files: bamsplit/002_A.chr14.bam; Input files updated by another job: bam/002_A.bam
+    wildcards: sample=002, tumor=A, chrom=chr14
+    threads: 8
+
+sambamba view -t 8 -h -f bam -o bamsplit/002_A.chr14.bam bam/002_A.bam chr14 
+Activating conda environment: /fast/scratch/users/szyskam_c/develop/Dockersnake/.snakemake/conda/3ca628dd
+Activating conda environment: /fast/scratch/users/szyskam_c/develop/Dockersnake/.snakemake/conda/3ca628dd
+[Tue Aug  4 11:38:02 2020]
+Finished job 52.
+34 of 72 steps (47%) done
+
+[Tue Aug  4 11:38:02 2020]
+rule split_final_bam:
+    input: bam/002_A.bam
+    output: bamsplit/002_A.chr11.bam
+    jobid: 46
+    reason: Missing output files: bamsplit/002_A.chr11.bam; Input files updated by another job: bam/002_A.bam
+    wildcards: sample=002, tumor=A, chrom=chr11
+    threads: 8
+
+sambamba view -t 8 -h -f bam -o bamsplit/002_A.chr11.bam bam/002_A.bam chr11 
+Activating conda environment: /fast/scratch/users/szyskam_c/develop/Dockersnake/.snakemake/conda/3ca628dd
+[Tue Aug  4 11:38:07 2020]
+Finished job 48.
+35 of 72 steps (49%) done
+
+[Tue Aug  4 11:38:07 2020]
+rule split_final_bam:
+    input: bam/002_A.bam
+    output: bamsplit/002_A.chr8.bam
+    jobid: 40
+    reason: Missing output files: bamsplit/002_A.chr8.bam; Input files updated by another job: bam/002_A.bam
+    wildcards: sample=002, tumor=A, chrom=chr8
+    threads: 8
+
+sambamba view -t 8 -h -f bam -o bamsplit/002_A.chr8.bam bam/002_A.bam chr8 
+Activating conda environment: /fast/scratch/users/szyskam_c/develop/Dockersnake/.snakemake/conda/3ca628dd
+[Tue Aug  4 11:38:46 2020]
+Finished job 40.
+36 of 72 steps (50%) done
+
+[Tue Aug  4 11:38:46 2020]
+rule split_final_bam:
+    input: bam/002_A.bam
+    output: bamsplit/002_A.chr22.bam
+    jobid: 68
+    reason: Missing output files: bamsplit/002_A.chr22.bam; Input files updated by another job: bam/002_A.bam
+    wildcards: sample=002, tumor=A, chrom=chr22
+    threads: 8
+
+sambamba view -t 8 -h -f bam -o bamsplit/002_A.chr22.bam bam/002_A.bam chr22 
+[Tue Aug  4 11:38:50 2020]
+Finished job 46.
+37 of 72 steps (51%) done
+
+[Tue Aug  4 11:38:50 2020]
+rule split_final_bam:
+    input: bam/002_A.bam
+    output: bamsplit/002_A.chr15.bam
+    jobid: 54
+    reason: Missing output files: bamsplit/002_A.chr15.bam; Input files updated by another job: bam/002_A.bam
+    wildcards: sample=002, tumor=A, chrom=chr15
+    threads: 8
+
+sambamba view -t 8 -h -f bam -o bamsplit/002_A.chr15.bam bam/002_A.bam chr15 
+Activating conda environment: /fast/scratch/users/szyskam_c/develop/Dockersnake/.snakemake/conda/3ca628dd
+Activating conda environment: /fast/scratch/users/szyskam_c/develop/Dockersnake/.snakemake/conda/3ca628dd
+[Tue Aug  4 11:39:09 2020]
+Finished job 68.
+38 of 72 steps (53%) done
+
+[Tue Aug  4 11:39:09 2020]
+rule split_final_bam:
+    input: bam/002_A.bam
+    output: bamsplit/002_A.chr7.bam
+    jobid: 38
+    reason: Missing output files: bamsplit/002_A.chr7.bam; Input files updated by another job: bam/002_A.bam
+    wildcards: sample=002, tumor=A, chrom=chr7
+    threads: 8
+
+sambamba view -t 8 -h -f bam -o bamsplit/002_A.chr7.bam bam/002_A.bam chr7 
+Activating conda environment: /fast/scratch/users/szyskam_c/develop/Dockersnake/.snakemake/conda/3ca628dd
+[Tue Aug  4 11:39:20 2020]
+Finished job 54.
+39 of 72 steps (54%) done
+
+[Tue Aug  4 11:39:20 2020]
+rule split_final_bam:
+    input: bam/002_A.bam
+    output: bamsplit/002_A.chr18.bam
+    jobid: 60
+    reason: Missing output files: bamsplit/002_A.chr18.bam; Input files updated by another job: bam/002_A.bam
+    wildcards: sample=002, tumor=A, chrom=chr18
+    threads: 8
+
+sambamba view -t 8 -h -f bam -o bamsplit/002_A.chr18.bam bam/002_A.bam chr18 
+Activating conda environment: /fast/scratch/users/szyskam_c/develop/Dockersnake/.snakemake/conda/3ca628dd
+[Tue Aug  4 11:39:39 2020]
+Finished job 60.
+40 of 72 steps (56%) done
+
+[Tue Aug  4 11:39:39 2020]
+rule split_final_bam:
+    input: bam/002_A.bam
+    output: bamsplit/002_A.chr1.bam
+    jobid: 26
+    reason: Missing output files: bamsplit/002_A.chr1.bam; Input files updated by another job: bam/002_A.bam
+    wildcards: sample=002, tumor=A, chrom=chr1
+    threads: 8
+
+sambamba view -t 8 -h -f bam -o bamsplit/002_A.chr1.bam bam/002_A.bam chr1 
+Activating conda environment: /fast/scratch/users/szyskam_c/develop/Dockersnake/.snakemake/conda/3ca628dd
+[Tue Aug  4 11:39:56 2020]
+Finished job 38.
+41 of 72 steps (57%) done
+
+[Tue Aug  4 11:39:56 2020]
+rule split_final_bam:
+    input: bam/002_A.bam
+    output: bamsplit/002_A.chr20.bam
+    jobid: 64
+    reason: Missing output files: bamsplit/002_A.chr20.bam; Input files updated by another job: bam/002_A.bam
+    wildcards: sample=002, tumor=A, chrom=chr20
+    threads: 8
+
+sambamba view -t 8 -h -f bam -o bamsplit/002_A.chr20.bam bam/002_A.bam chr20 
+Activating conda environment: /fast/scratch/users/szyskam_c/develop/Dockersnake/.snakemake/conda/3ca628dd
+[Tue Aug  4 11:40:24 2020]
+Finished job 64.
+42 of 72 steps (58%) done
+
+[Tue Aug  4 11:40:24 2020]
+rule split_final_bam:
+    input: bam/002_A.bam
+    output: bamsplit/002_A.chrX.bam
+    jobid: 70
+    reason: Missing output files: bamsplit/002_A.chrX.bam; Input files updated by another job: bam/002_A.bam
+    wildcards: sample=002, tumor=A, chrom=chrX
+    threads: 8
+
+sambamba view -t 8 -h -f bam -o bamsplit/002_A.chrX.bam bam/002_A.bam chrX 
+Activating conda environment: /fast/scratch/users/szyskam_c/develop/Dockersnake/.snakemake/conda/3ca628dd
+[Tue Aug  4 11:41:05 2020]
+Finished job 26.
+43 of 72 steps (60%) done
+
+[Tue Aug  4 11:41:05 2020]
+rule split_final_bam:
+    input: bam/002_A.bam
+    output: bamsplit/002_A.chr17.bam
+    jobid: 58
+    reason: Missing output files: bamsplit/002_A.chr17.bam; Input files updated by another job: bam/002_A.bam
+    wildcards: sample=002, tumor=A, chrom=chr17
+    threads: 8
+
+sambamba view -t 8 -h -f bam -o bamsplit/002_A.chr17.bam bam/002_A.bam chr17 
+[Tue Aug  4 11:41:05 2020]
+Finished job 70.
+44 of 72 steps (61%) done
+
+[Tue Aug  4 11:41:05 2020]
+rule split_final_bam:
+    input: bam/002_A.bam
+    output: bamsplit/002_A.chr10.bam
+    jobid: 44
+    reason: Missing output files: bamsplit/002_A.chr10.bam; Input files updated by another job: bam/002_A.bam
+    wildcards: sample=002, tumor=A, chrom=chr10
+    threads: 8
+
+sambamba view -t 8 -h -f bam -o bamsplit/002_A.chr10.bam bam/002_A.bam chr10 
+Activating conda environment: /fast/scratch/users/szyskam_c/develop/Dockersnake/.snakemake/conda/3ca628dd
+Activating conda environment: /fast/scratch/users/szyskam_c/develop/Dockersnake/.snakemake/conda/3ca628dd
+[Tue Aug  4 11:41:45 2020]
+Finished job 44.
+45 of 72 steps (62%) done
+
+[Tue Aug  4 11:41:45 2020]
+rule split_final_bam:
+    input: bam/002_A.bam
+    output: bamsplit/002_A.chr2.bam
+    jobid: 28
+    reason: Missing output files: bamsplit/002_A.chr2.bam; Input files updated by another job: bam/002_A.bam
+    wildcards: sample=002, tumor=A, chrom=chr2
+    threads: 8
+
+sambamba view -t 8 -h -f bam -o bamsplit/002_A.chr2.bam bam/002_A.bam chr2 
+[Tue Aug  4 11:41:49 2020]
+Finished job 58.
+46 of 72 steps (64%) done
+Activating conda environment: /fast/scratch/users/szyskam_c/develop/Dockersnake/.snakemake/conda/3ca628dd
+[Tue Aug  4 11:42:19 2020]
+Finished job 28.
+47 of 72 steps (65%) done
+
+[Tue Aug  4 11:42:19 2020]
+rule anno2EB:
+    input: table/002_A.chr1.csv, bamsplit/002_A.chr1.bam
+    output: eb/002_A-chr1.EB
+    log: logs/eb/002_A-chr1.log
+    jobid: 2
+    reason: Missing output files: eb/002_A-chr1.EB; Input files updated by another job: table/002_A.chr1.csv, bamsplit/002_A.chr1.bam
+    wildcards: sample=002, tumor=A, chrom=chr1
+    threads: 20
+
+python /fast/scratch/users/szyskam_c/develop/Dockersnake/.snakemake/scripts/tmptsrcznnd.eb.py
+Activating conda environment: /fast/scratch/users/szyskam_c/develop/Dockersnake/.snakemake/conda/d9b5b83e

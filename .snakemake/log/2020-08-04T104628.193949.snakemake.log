@@ -1,0 +1,4 @@
+NameError in line 51 of /fast/home/users/szyskam_c/snakes/develop/dockersnake/includes/io.snk:
+name 'samples_df' is not defined
+  File "/fast/home/users/szyskam_c/snakes/develop/dockersnake/Snakefile", line 22, in <module>
+  File "/fast/home/users/szyskam_c/snakes/develop/dockersnake/includes/io.snk", line 51, in get_files

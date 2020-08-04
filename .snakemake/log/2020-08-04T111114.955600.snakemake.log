@@ -1,0 +1,4 @@
+RuleException in line 18 of /fast/home/users/szyskam_c/snakes/develop/dockersnake/includes/splitBAM.snk:
+Conda environments are only allowed with shell, script, or wrapper directives (not with run).
+  File "/fast/home/users/szyskam_c/snakes/develop/dockersnake/Snakefile", line 27, in <module>
+  File "/fast/home/users/szyskam_c/snakes/develop/dockersnake/includes/splitBAM.snk", line 18, in <module>

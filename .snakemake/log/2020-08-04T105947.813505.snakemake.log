@@ -1,0 +1,5 @@
+Building DAG of jobs...
+MissingInputException in line 33 of /fast/home/users/szyskam_c/snakes/develop/dockersnake/Snakefile:
+Missing input files for rule all:
+EB/002_B.csv
+EB/002_A.csv

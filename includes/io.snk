@@ -1,0 +1,115 @@
+import pandas as pd
+import os
+import re
+
+
+def get_files(folder_list, sample_sheet):
+    '''
+    retrieves the path to all the files in the sample_sheet
+    if rerun == False, it looks for fastq files
+    if rerun == True, it looks for bam files
+    '''
+
+    # check whether single folder or folder list
+    if len(folder_list[0]) == 1:
+        folder_list = [folder_list]
+
+    # import the sample sheet
+    samples = pd.read_csv(sample_sheet, sep='\t', index_col=0).set_index('name')
+    # for fastq files:
+    bam_list = []
+    short_list = []
+    # cycle through the input folders and look for matching bam files
+    for input_folder in folder_list:
+        print(f"Looking for bam files in {input_folder}")
+        for folder, _, files in os.walk(input_folder):
+            for file in files:
+                if '.bam' in file and '.md5' not in file and '.bai' not in file:
+                    bam_list.append(os.path.join(folder, file))
+                    short_list.append(file)
+
+    # include check for empty list
+    def get_bam_paths(row, bam_list=None):
+        '''
+        go through the sample list and find the respective read and index bams in the respective bam_list
+        '''
+
+        for file in bam_list:
+            # get the basename
+            base_file = os.path.basename(file)
+            if row.name in base_file and not "chr" in base_file:
+                row['bam_path'] = file
+        return row
+
+    samples_df = samples.apply(get_bam_paths, axis=1, bam_list=bam_list)
+    short_df = samples.apply(get_bam_paths, axis=1, bam_list=short_list)
+    # ########## DEBUG #################
+    print(short_df)
+    print(samples_df)
+    # ##################################
+
+    return samples_df, short_df
+
+
+####################### BAM FILE SWITCHES ###########################
+
+def get_rerun_bam(w):
+    sample_name = f"{w.sample}_{w.tumor}"
+    return sample_df.loc[sample_name]['bam_path']
+
+def get_table(w):
+    sample_name = f"table/{w.sample}_{w.tumor}.{w.chrom}.csv"
+    return os.path.join(config['inputdirs'][0], sample_name)
+
+
+
+def get_script(script_name):
+    return os.path.join(config['snakedir'], config['paths']['scripts'], config['scripts'][script_name])
+
+
+def get_filter(filter_dict):
+    '''
+    get the full path to the filter script with the name filter_name
+    '''
+    return os.path.join(config['snakedir'], config['paths']['scripts'], 'filters', filter_dict['path'])
+
+
+def get_bed_file(covered_or_padded):
+    '''
+    returns the appropriate bed_file depending on build and library if 
+    '''
+    if covered_or_padded == 'Padded':
+        bed = 'bed_file_pad'
+    else:
+        bed = 'bed_file'
+    bed_file = config['setup'].get(bed, None)
+    if bed_file:
+        return bed_file
+    else:
+        build = config['ref']['build']
+        lib = config['setup']['library']
+        lib_version = config['setup']['library_version']
+        prefix = 'SS' if lib == 'SureSelect' else lib
+        suffix = '_nochr' if build == 'hg19' else ''
+        bed_name = f"{prefix}_{lib_version}_{build}_{covered_or_padded}{suffix}.bed"
+        bed_file = os.path.join(config['paths']['mystatic'], 'bed_files', lib, build, bed_name)
+    return bed_file
+
+
+def full_path(file):
+
+    '''
+    returns the full path to a reference
+    '''
+
+    build = config['ref']['build']
+    full_ref_path = os.path.join(config['paths']['mystatic'], config['ref'][build][file])
+    return full_ref_path
+
+
+def static_path(file):
+    '''
+    returns the absolute path when given relative to static folder
+    '''
+
+    return os.path.join(config['paths']['mystatic'], file)

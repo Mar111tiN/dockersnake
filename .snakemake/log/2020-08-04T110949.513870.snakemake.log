@@ -1,0 +1,3 @@
+WorkflowError in line 27 of /fast/home/users/szyskam_c/snakes/develop/dockersnake/Snakefile:
+Failed to open /fast/home/users/szyskam_c/snakes/develop/dockersnake/includes/splitBAMsnk.
+  File "/fast/home/users/szyskam_c/snakes/develop/dockersnake/Snakefile", line 27, in <module>

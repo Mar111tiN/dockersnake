@@ -1,0 +1,39 @@
+
+######### FINAL BAM AND SPLIT ########################
+rule merge_final_bam:
+    '''
+    here the chr-split bams files corresponding to the mpileup output are created
+    this step is needed for PoN-list
+    bamfinal is also consumed by the bam QC
+    '''
+
+    input:
+        bam = get_rerun_bam
+    output:
+        bam = "bam/{sample}_{tumor}.bam"
+    threads:
+        1
+    conda:
+        f"../{config['envs']}/samba-env.yml"
+    shell:
+        "ln -s {input.bam} {output.bam}; sambamba index {output.bam}"
+
+
+############# rerun ##############################################
+
+
+rule split_final_bam:
+    """
+    if you do a rerun of final bams, this creates the split bams needed to go on with the pipeline
+    """
+
+    input: 
+        bam = "bam/{sample}_{tumor}.bam"
+    output:
+        bam = "bamsplit/{sample}_{tumor}.{chrom}.bam"
+    threads:
+        config['resplit_bam']['threads']
+    conda:
+        f"../{config['envs']}/samba-env.yml"
+    shell:
+        "sambamba view -t {threads} -h -f bam -o {output.bam} {input.bam} {wildcards.chrom} "
