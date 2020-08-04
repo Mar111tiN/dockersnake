@@ -7,7 +7,7 @@ workdir: config['workdir']
 
 # include helper functions
 include: "includes/io.snk"
-include: "includes/utils.snk
+include: "includes/utils.snk"
 
 
 # retrieve the file_df with all the file paths from the samplesheet

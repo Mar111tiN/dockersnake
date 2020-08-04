@@ -698,3 +698,5 @@ rule anno2EB:
 
 python /fast/scratch/users/szyskam_c/develop/Dockersnake/.snakemake/scripts/tmpe0kccdga.eb.py
 Activating conda environment: /fast/scratch/users/szyskam_c/develop/Dockersnake/.snakemake/conda/d9b5b83e
+Terminating processes on user request, this might take some time.
+Cancelling snakemake on user request.

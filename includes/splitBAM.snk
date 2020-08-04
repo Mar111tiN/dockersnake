@@ -1,6 +1,6 @@
 
 ######### FINAL BAM AND SPLIT ########################
-rule merge_final_bam:
+rule get_bam:
     '''
     here the chr-split bams files corresponding to the mpileup output are created
     this step is needed for PoN-list
@@ -22,7 +22,7 @@ rule merge_final_bam:
 ############# rerun ##############################################
 
 
-rule split_final_bam:
+rule split_bam:
     """
     if you do a rerun of final bams, this creates the split bams needed to go on with the pipeline
     """
