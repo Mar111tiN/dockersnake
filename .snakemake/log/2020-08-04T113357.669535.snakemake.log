@@ -682,3 +682,19 @@ rule anno2EB:
 
 python /fast/scratch/users/szyskam_c/develop/Dockersnake/.snakemake/scripts/tmptsrcznnd.eb.py
 Activating conda environment: /fast/scratch/users/szyskam_c/develop/Dockersnake/.snakemake/conda/d9b5b83e
+[Tue Aug  4 12:04:25 2020]
+Finished job 2.
+48 of 72 steps (67%) done
+
+[Tue Aug  4 12:04:25 2020]
+rule anno2EB:
+    input: table/002_A.chr2.csv, bamsplit/002_A.chr2.bam
+    output: eb/002_A-chr2.EB
+    log: logs/eb/002_A-chr2.log
+    jobid: 3
+    reason: Missing output files: eb/002_A-chr2.EB; Input files updated by another job: table/002_A.chr2.csv, bamsplit/002_A.chr2.bam
+    wildcards: sample=002, tumor=A, chrom=chr2
+    threads: 20
+
+python /fast/scratch/users/szyskam_c/develop/Dockersnake/.snakemake/scripts/tmpe0kccdga.eb.py
+Activating conda environment: /fast/scratch/users/szyskam_c/develop/Dockersnake/.snakemake/conda/d9b5b83e
